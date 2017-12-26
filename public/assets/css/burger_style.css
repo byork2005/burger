@@ -1,0 +1,27 @@
+.wrapper {
+    width: 640px;
+    margin: 0 auto;
+    background-color: azure;
+    z-index: 2;
+    height: 500px;
+}
+
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+body {
+    background-image: url("../img/venice.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    height: 840px;
+}
+
+html {
+    background-color: black;
+    z-index: 0;
+}
+

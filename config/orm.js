@@ -18,9 +18,9 @@ var orm = {
         });
     },
 
-    insertOne: function(table, input, callback)
+    insertOne: function(table, colName, input, callback)
     {
-        var queryString = "INSERT INTO burgers_DB (" + table + ") VALUES (" + input.toString() + ")"; 
+        var queryString = "INSERT INTO " + table + " (" + colName + ") VALUES (" + input.toString() + ")"; 
 
         connection.query(queryString, input, function(err, result)
         {
@@ -29,12 +29,15 @@ var orm = {
         })
     },
 
-    updateOne: function(table, devour, callback)
+    updateOne: function(table, colName, status, id, callback)
     {
-        // need code
+        var queryString = "UPDATE " + table + " SET " + colName + "=" + status + " WHERE id =" + id; 
+        connection.query(queryString, function(err, result)
+        {
+            if(err) throw (err);
+            callback(result);
+        })
     },
-
-
 }
 
 module.exports = orm;
