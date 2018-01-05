@@ -5,7 +5,7 @@ updateOne()
 
 if issues check file path to connection.js, it may need a / */
 
-var connection = require("connection.js")
+var connection = require("../config/connection.js")
 
 var orm = {
     selectAll: function(table, callback)

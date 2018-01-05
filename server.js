@@ -14,9 +14,9 @@ app.engine("handlebars", handlebars({ defaultLayout: "main"}))
 app.set("view engine", "handlebars");
 
 app.use("/", routes);
-app.listen(process.env.PORT || 3000, function()
+app.listen(port, function()
 {
-    console.log("Listening on Port:" + PORT)
+    console.log("Listening on Port:" + port)
 });
 
 
