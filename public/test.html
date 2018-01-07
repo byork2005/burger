@@ -8,45 +8,46 @@
 		<script src="https://code.jquery.com/jquery.js"></script>
 	</head>
 	<body>
-		<div class="wrapper">
-    
-            <img src="assets/img/burger.png" alt="Cheeseburger">
-        
-            <h1 class="center" >Eat-Da-Burger!</h1>
-        
-            <div class="row">
-                
-                            <div class="col-md-6 center">
+            <div class="wrapper">
                     
-                                <h4>Menu</h4>
-                            
-                                <ul>
-                                    <li>Cheeseburger</li>
-                                    <li>Bacon Burger</li>
-                                    <li>Mushroom 'N' Swiss</li>
-                                </ul>
+                        <img src="assets/img/burger.png" alt="Cheeseburger">
+                        <h1 class="center" >Eat-Da-Burger!</h1>
                 
+                        <div class="row">
+                            <div class="col-md-6 center">
+                                <h4>Menu</h4>
+                                <ul>
+                                  
+                                            <li>
+                                                <p> 1 Whopper <form action="/{{this.id}}?_method=PUT" method="POST">
+                                                    <input type="hidden" name="devoured" value="true">
+                                                    <button class="btn-primary" type="submit">Eat It!</button>
+                                                </form></p>
+                                               
+                                                <p> 2 Big Mac</p>
+                                            </li>
+                                     
+                                </ul>
                             </div>
                             <div class="col-md-6 center">
-                
                                 <h4>Devoured</h4>
-                
                                 <ul>
-                                    <li>Double Cheeseburger</li>
-                                    <li>Black Bean Burger</li>
+                                   
+                                            <li>
+                                               <p> 3 Baconator</p>
+                                               <p> 4 SuperSonic Cheeseburger</p>
+                                            </li>
+                                  
                                 </ul>
-                
                             </div>
-                
-                        </div>
-        
-            <form class="center burgerInput" action="">
-                <div class="form-group">
-                    <!-- <label for="inputLabel">Enter a new burger</label> -->
-                    <textarea class="form-control" id="burgerInput" cols="30" rows="2" placeholder="Enter a new burger"></textarea>
-                </div>
-                <button type="submit" class="center">Add to the Menu</button>
-            </form>
-        </div> <!-- wrapper -->
+                        </div> <!-- end of menu/devoured row -->
+                    
+                        <form class="center burgerInput" action="/" method="POST">
+                            <div class="form-group">
+                                <textarea type="text" name="burger_name" class="form-control" id="burgerInput" cols="30" rows="2" placeholder="Enter a new burger"></textarea>
+                            </div>
+                            <button type="submit" class="center">Add to the Menu</button>
+                        </form>
+                    </div> <!-- wrapper -->
 	</body>
 </html>
