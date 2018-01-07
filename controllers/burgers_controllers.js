@@ -2,32 +2,43 @@ var express = require("express");
 var router = express.Router();
 var burger = require("../models/burger.js");
 
-router.get("/", function(req, res)
+router.get("/", function(request, response)
 {
-    burger.allBurgers(function(data)
+    burger.all(function(data)
     {
         var handlebarsObj = {
             burgers: data
         };
-        res.render("index", handlebarsObj)
+        response.render("index", handlebarsObj)
     })
 });
 
-router.post("/", function(req, res)
+router.post("/", function(request, response) 
 {
-    burger.newBurger(req.body.burger_name, function()
+    burger.create(
+    [
+      "burger_name", "devoured"
+    ], [
+      request.body.burger_name, 0
+    ], function() 
     {
-        res.redirect("/");
+      response.redirect("/");
     })
+  });
 
-});
-
-router.put("/:id", function(req, res)
-{
-    burger.updateBurger(1, req.params.id, function()
+  router.put("/:id", function(request, response) 
+  {
+    var condition = "id = " + request.params.id;
+  
+    console.log("condition", condition);
+  
+    burger.update(
     {
-        res.redirect("/");
-    })
-})
+      devoured: request.body.devoured
+    }, condition, function() 
+    {
+      response.redirect("/");
+    });
+  });
 
 module.exports = router;
