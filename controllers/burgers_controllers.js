@@ -9,6 +9,7 @@ router.get("/", function(req, res)
         var handlebarsObj = {
             burgers: data
         };
+        res.render("index", handlebarsObj)
     })
 });
 
@@ -18,6 +19,7 @@ router.post("/", function(req, res)
     {
         res.redirect("/");
     })
+
 });
 
 router.put("/:id", function(req, res)

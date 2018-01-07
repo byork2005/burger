@@ -3,7 +3,8 @@
     margin: 0 auto;
     background-color: azure;
     z-index: 2;
-    height: 500px;
+    min-height: 500px;
+    border-radius: 5px;
 }
 
 .center {
@@ -17,11 +18,20 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
-    height: 840px;
+    min-height: 840px;
 }
 
 html {
     background-color: black;
     z-index: 0;
+}
+
+.burgerInput {
+    margin: 10px 5px;
+    padding-bottom: 15px;
+}
+
+h4 {
+    text-decoration: underline;
 }
 
